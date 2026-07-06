@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Solutions — Professional Computer Services | Oshakati &amp; Ongwediva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e15;
+    --panel:#121826;
+    --panel-soft:#0f1420;
+    --border:#232c3f;
+    --cyan:#5db8d4;
+    --violet:#8b7fd6;
+    --gold:#d9a548;
+    --text:#eef1f6;
+    --dim:#8b96a9;
+    --dim2:#5e6980;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    font-size:16px;
+  }
+  h1,h2,h3,.display{font-family:'Sora',sans-serif;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px;}
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,14,21,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px;
+    background:linear-gradient(135deg, var(--cyan), var(--violet));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Sora',sans-serif; font-weight:800; font-size:0.95rem; color:#0b0e15;
+  }
+  .brand-name{font-family:'Sora',sans-serif; font-weight:700; font-size:1.05rem; letter-spacing:-0.01em;}
+  .brand-name span{color:var(--dim); font-weight:500;}
+  .nav-links{display:flex; align-items:center; gap:32px;}
+  .nav-links a{text-decoration:none; color:var(--dim); font-size:0.92rem; font-weight:500; transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    display:flex; align-items:center; gap:8px;
+    background:var(--gold); color:#181205; font-weight:700;
+    padding:10px 20px; border-radius:8px; text-decoration:none; font-size:0.88rem;
+    white-space:nowrap;
+  }
+  @media (max-width:760px){ .nav-links{display:none;} }
+
+  /* HERO */
+  .hero{
+    padding:88px 0 60px;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
+  }
+  @media (max-width:900px){ .hero{grid-template-columns:1fr; padding:56px 0 40px;} }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.8rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--cyan); background:rgba(93,184,212,0.08); border:1px solid rgba(93,184,212,0.25);
+    padding:6px 14px; border-radius:999px; margin-bottom:22px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+
+  h1{
+    font-size:clamp(2.1rem, 4.2vw, 3.15rem);
+    line-height:1.12; font-weight:800; letter-spacing:-0.02em;
+    max-width:560px;
+  }
+  h1 .accent{color:var(--cyan);}
+  .sub{
+    margin-top:20px; max-width:480px; color:var(--dim); font-size:1.04rem;
+  }
+  .hero-ctas{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold); color:#181205; font-weight:700; text-decoration:none;
+    padding:14px 26px; border-radius:8px; font-size:0.95rem; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-ghost{
+    border:1px solid var(--border); color:var(--text); text-decoration:none;
+    padding:14px 26px; border-radius:8px; font-size:0.95rem;
+  }
+  .hero-note{margin-top:26px; display:flex; gap:20px; flex-wrap:wrap;}
+  .hero-note div{display:flex; align-items:center; gap:8px; font-size:0.86rem; color:var(--dim2);}
+
+  /* STATUS PANEL (signature element) */
+  .status-panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .status-head{
+    display:flex; align-items:center; gap:10px;
+    padding:16px 20px; border-bottom:1px solid var(--border); background:var(--panel-soft);
+  }
+  .status-head svg{flex-shrink:0;}
+  .status-head .t{font-weight:600; font-size:0.9rem;}
+  .status-head .s{margin-left:auto; font-size:0.78rem; color:var(--dim2);}
+  .status-body{padding:20px 20px 22px;}
+  .status-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04);
+    font-size:0.88rem;
+  }
+  .status-row:last-child{border-bottom:none;}
+  .status-row .label{color:var(--dim); display:flex; align-items:center; gap:10px;}
+  .status-row .badge{
+    font-size:0.72rem; font-weight:700; letter-spacing:0.03em; padding:3px 10px; border-radius:5px;
+    background:rgba(93,184,212,0.12); color:var(--cyan);
+  }
+  .status-row .badge.pending{background:rgba(217,165,72,0.12); color:var(--gold); animation:fade 1.4s infinite;}
+  @keyframes fade{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+  /* SERVICES */
+  section{padding:64px 0;}
+  .section-head{margin-bottom:40px; max-width:560px;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(1.5rem,2.6vw,2rem); font-weight:800; letter-spacing:-0.01em;}
+  .section-head p{color:var(--dim); margin-top:12px; font-size:1rem;}
+
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:860px){.cards{grid-template-columns:1fr;}}
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px 26px;
+  }
+  .card .icon{
+    width:44px; height:44px; border-radius:10px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px;
+  }
+  .card.i1 .icon{background:rgba(93,184,212,0.1); color:var(--cyan);}
+  .card.i2 .icon{background:rgba(93,184,212,0.1); color:var(--cyan);}
+  .card.i3 .icon{background:rgba(139,127,214,0.12); color:var(--violet);}
+  .card h3{font-size:1.15rem; font-weight:700; margin-bottom:10px;}
+  .card p{color:var(--dim); font-size:0.94rem;}
+
+  /* WHY US */
+  .why-strip{
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    background:var(--panel-soft);
+  }
+  .why-grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:0;
+    padding:36px 0;
+  }
+  @media (max-width:860px){ .why-grid{grid-template-columns:repeat(2,1fr); gap:24px;} }
+  .why-item{
+    display:flex; flex-direction:column; gap:10px; padding:0 20px;
+    border-left:1px solid var(--border);
+  }
+  .why-item:first-child{border-left:none;}
+  @media (max-width:860px){ .why-item{border-left:none; padding:0;} }
+  .why-item .icon{color:var(--cyan);}
+  .why-item .t{font-weight:600; font-size:0.92rem;}
+  .why-item .d{font-size:0.82rem; color:var(--dim2);}
+
+  /* CONTACT + COVERAGE */
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  @media (max-width:860px){.grid2{grid-template-columns:1fr;}}
+  .panel{
+    background:var(--panel); border:1px solid var(--border); border-radius:14px;
+    padding:34px;
+  }
+  .panel h3{font-size:1.25rem; font-weight:700; margin-bottom:6px;}
+  .panel .lead{color:var(--dim); font-size:0.92rem; margin-bottom:26px;}
+
+  .contact-row{
+    display:flex; align-items:center; gap:14px; margin-bottom:16px;
+    padding:14px 16px; background:var(--panel-soft); border:1px solid var(--border); border-radius:10px;
+    text-decoration:none;
+  }
+  .contact-row .icon-badge{
+    width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center;
+    background:rgba(93,184,212,0.1); color:var(--cyan); flex-shrink:0;
+  }
+  .contact-row .meta{display:flex; flex-direction:column;}
+  .contact-row .k{font-size:0.75rem; color:var(--dim2); text-transform:uppercase; letter-spacing:0.04em;}
+  .contact-row .v{font-weight:600; font-size:0.98rem;}
+
+  .coverage-list{display:flex; flex-direction:column; gap:14px; margin-top:6px;}
+  .coverage-item{
+    display:flex; align-items:center; gap:14px;
+    padding:16px; background:var(--panel-soft); border:1px solid var(--border); border-radius:10px;
+  }
+  .coverage-item .icon-badge{
+    width:38px; height:38px; border-radius:9px; display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .coverage-item.a .icon-badge{background:rgba(93,184,212,0.1); color:var(--cyan);}
+  .coverage-item.b .icon-badge{background:rgba(139,127,214,0.12); color:var(--violet);}
+  .coverage-item .name{font-weight:600; font-size:0.98rem;}
+  .coverage-item .desc{font-size:0.82rem; color:var(--dim2);}
+
+  footer{
+    text-align:center; padding:36px 24px 46px; color:var(--dim2);
+    font-size:0.85rem;
+    border-top:1px solid var(--border);
+  }
+  footer .accent{color:var(--cyan);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="brand-mark">TS</div>
+      <div class="brand-name">Tech Solutions <span>| Oshakati &amp; Ongwediva</span></div>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="tel:0857729277">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      085 772 9277
+    </a>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow"><span class="dot"></span>Available now in Oshakati &amp; Ongwediva</div>
+    <h1>Professional computer services, <span class="accent">done right the first time.</span></h1>
+    <p class="sub">We build software, keep Windows systems updated, and recover machines from crashes — for home users, students and businesses. Fast. Reliable. We fix, you focus.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="mailto:techsolution@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"></path><path d="M22 6l-10 7L2 6"></path><path d="M2 6h20v12H2z"></path></svg>
+        Request a service
+      </a>
+      <a class="btn-ghost" href="#services">View services</a>
+    </div>
+    <div class="hero-note">
+      <div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5db8d4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        100% satisfaction
+      </div>
+      <div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5db8d4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Affordable pricing
+      </div>
+      <div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5db8d4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        Expert support
+      </div>
+    </div>
+  </div>
+
+  <div class="status-panel">
+    <div class="status-head">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5db8d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+      <span class="t">System diagnostic</span>
+      <span class="s">Live</span>
+    </div>
+    <div class="status-body">
+      <div class="status-row"><span class="label">Windows update status</span><span class="badge">Up to date</span></div>
+      <div class="status-row"><span class="label">Boot sequence</span><span class="badge">Healthy</span></div>
+      <div class="status-row"><span class="label">Custom software build</span><span class="badge">Ready</span></div>
+      <div class="status-row"><span class="label">Previous crash report</span><span class="badge">Resolved</span></div>
+      <div class="status-row"><span class="label">Support ticket queue</span><span class="badge pending">Open</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="services">
+  <div class="section-head">
+    <div class="eyebrow"><span class="dot"></span>Services</div>
+    <h2>Three ways we keep you running</h2>
+    <p>From building something new to fixing something broken, this is where most of our work falls.</p>
+  </div>
+  <div class="cards">
+    <div class="card i1">
+      <div class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+      </div>
+      <h3>Software Programming</h3>
+      <p>Custom software built for your needs — web, desktop and application development, scoped to what your work actually requires.</p>
+    </div>
+    <div class="card i2">
+      <div class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"></path><polyline points="21 3 21 9 15 9"></polyline></svg>
+      </div>
+      <h3>Windows Updating</h3>
+      <p>Keep your system secure, fast and current with the latest Windows updates — configured properly, without the slowdowns.</p>
+    </div>
+    <div class="card i3">
+      <div class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"></path></svg>
+      </div>
+      <h3>Windows Crash Fixing</h3>
+      <p>From boot errors to full system crashes — we diagnose the cause and fix it fast. Your PC, our priority.</p>
+    </div>
+  </div>
+</section>
+
+<div class="why-strip" id="why">
+  <div class="wrap why-grid">
+    <div class="why-item">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+      <div class="t">Fast service</div>
+      <div class="d">Quick turnaround on every job</div>
+    </div>
+    <div class="why-item">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <div class="t">Reliable &amp; secure</div>
+      <div class="d">Your data handled with care</div>
+    </div>
+    <div class="why-item">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      <div class="t">Expert support</div>
+      <div class="d">Real troubleshooting, not guesswork</div>
+    </div>
+    <div class="why-item">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+      <div class="t">Affordable pricing</div>
+      <div class="d">Fair rates for every budget</div>
+    </div>
+    <div class="why-item">
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+      <div class="t">100% satisfaction</div>
+      <div class="d">We stay until it's fixed</div>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="coverage">
+  <div class="grid2">
+    <div class="panel" id="contact">
+      <h3>Let's connect</h3>
+      <p class="lead">Book a service or send your request — we respond quickly.</p>
+      <a class="contact-row" href="tel:0857729277">
+        <div class="icon-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <div class="meta"><span class="k">Phone</span><span class="v">085 772 9277</span></div>
+      </a>
+      <a class="contact-row" href="mailto:techsolution@gmail.com">
+        <div class="icon-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+        </div>
+        <div class="meta"><span class="k">Email</span><span class="v">techsolution@gmail.com</span></div>
+      </a>
+    </div>
+
+    <div class="panel">
+      <h3>Where we serve</h3>
+      <p class="lead">Currently covering both towns.</p>
+      <div class="coverage-list">
+        <div class="coverage-item a">
+          <div class="icon-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div><div class="name">Oshakati</div><div class="desc">On-site &amp; drop-off service</div></div>
+        </div>
+        <div class="coverage-item b">
+          <div class="icon-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div><div class="name">Ongwediva</div><div class="desc">On-site &amp; drop-off service</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Solving tech problems. Delivering <span class="accent">peace of mind.</span>
+</footer>
+
+</body>
+</html>
